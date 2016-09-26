@@ -1,0 +1,191 @@
+<html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=yes'><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/default.min.css"><style>h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #737373;
+    background-color: white;
+    margin: 10px 13px 10px 13px;
+}
+table {
+	margin: 10px 0 15px 0;
+	border-collapse: collapse;
+}
+td,th {
+	border: 1px solid #ddd;
+	padding: 3px 10px;
+}
+th {
+	padding: 5px 10px;
+}
+
+a {
+    color: #0069d6;
+    text-decoration: none;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+    background-color: #f5f4ea;
+}
+code {
+    background-color: #f5f4ea;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #f5f4ea;
+    color:#454545;
+    font-size: 11px;
+    padding: 0;
+}
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:10px auto;
+    }
+}
+@media print {
+	body,code,pre code,h1,h2,h3,h4,h5,h6 {
+		color: black;
+	}
+	table, pre {
+		page-break-inside: avoid;
+	}
+}
+</style></head><body><h1 id="-">凸集合</h1>
+<p>$ \bf{u} \bf{v} \in \bf{R^n}, 0 \leq \lambda \leq 1 $ とする</p>
+<p>$ (1 - \lambda) \bf{u} + \lambda \bf{v} $ : $\bf{u}, \bf{v} $ の凸結合
+$ [ \bf{u}, \bf{v} ] := { (1 - \lambda) \bf{u} + \lambda \bf{v} | 0 \leq \lambda \leq 1 } $ : $ \bf{u}, \bf{v} $ を結んだ線分</p>
+<p>$ \bf{u}_1 , \cdots , \bf{u}_k \in \bf{R^n} , \sum_{i = 1}^{k}{\lambda_i} = 1 $ に対してその線形結合
+$ \sum_{i = 1}^{k}{\lambda_i \bf{u}_i} $ を $ \bf{u}_1 , \cdots , \bf{u}_k $ の凸結合という</p>
+<p>一般に $ \bf{u} = \sum_{i = 1}^{k}{\lambda_i \bf{u}_i} $ は</p>
+<ul>
+<li>$ \bf{u}_1 , \cdots , \bf{u}_k  \in \bf{R}^n $ の時 負線形結合</li>
+<li>$ \bf{u}_1 \geq 0  , \cdots , \bf{u}_k \geq 0 $ の時 非負線形結合</li>
+<li>$ \bf{u}_1 + , \cdots , + \bf{u}_k = 1 $ の時 アフィン結合(Affine Combination)</li>
+<li>$ \bf{u}_1 \geq 0  , \cdots , \bf{u}_k \geq 0 $ かつ $ \bf{u}_1 + , \cdots , + \bf{u}_k = 1 $ の時 凸結合</li>
+</ul>
+<p>$ \phi \neq \bf{S} \in \bf{R}^n $ とする</p>
+<p>$ \bf{S} $ が凸集合 $ \Leftrightarrow {}^\forall \lambda \in [0,1], {}^\forall\bf{u}, \bf{v} \in S,  (1 - \lambda) \bf{u} + \lambda \bf{v} \in S$</p>
+<ul>
+<li>$ \lambda \in (0,1)$ としても同じ</li>
+<li>$ S = \bf{\phi} $は凸集合</li>
+</ul>
+<h2 id="-">例</h2>
+<p>LPの実行可能領域 $ \bf{S} := \{ \bf{x} \in \bf{R}^n | A\bf{x} = \bf{b}, \bf{x} \geq \bf{0} \} \in \bf{R}^n $ は凸集合</p>
+<h3 id="-">証明</h3>
+<p>$ \bf{S} = \bf{\phi} $ ならば明らかに$\bf{S}$は凸集合</p>
+<p>$ \bf{S} \neq \bf{\phi} $ とする</p>
+<p>${}^\forall \bf{u}, \bf{v} \in \bf{S}, {}^\forall\lambda \in [0,1] $ とする</p>
+<p>$ \bf{x} := (1 - \lambda) \bf{u} + \lambda \bf{u} $ とおく</p>
+<p>$ A\bf{x} = A[(1 - \lambda) \bf{u} + \lambda \bf{v}] \\
+  = (1 - \lambda) A\bf{u} + \lambda A\bf{u} \\
+  = (1 - \lambda) \bf{b} + \lambda \bf{b} \  (∵ \bf{u}, \bf{v} \in \bf{S} = \{ \bf{x} \in \bf{R}^n | A\bf{x} = \bf{b}, \bf{x} \geq \bf{0} \}) \\
+  = \bf{b}
+$</p>
+<p>$ \bf{x} = (1 - \lambda ) \bf{u} + \lambda \bf{u} \geq \bf{0} \ (∵ \bf{u}, \bf{v} \in \bf{S} = \{ \bf{x} \in \bf{R}^n | A\bf{x} = \bf{b}, \bf{x} \geq \bf{0} \})$</p>
+<p>よって $ \bf{x} = (1 - \lambda) \bf{u} + \lambda \bf{v} \in \bf{S} $ これより $\bf{S}$ は凸集合</p>
+<h2 id="-">超平面 半空間</h2>
+<p>$ \bf{0} \neq \bf{a} \in \bf{R}^n, \alpha \in \bf{R} $とする</p>
+<ul>
+<li>$ H = H(\bf{a} ; \alpha) := \{ \bf{x} \in \bf{R}^n | \bf{a}^T\bf{x} = \alpha\} $ : $ \bf{a} $ と $ \alpha $ で定まる超平面(hyper plane)</li>
+<li>$ H^+ = H^+(\bf{a} ; \alpha) := \{ \bf{x} \in \bf{R}^n | \bf{a}^T\bf{x} \geq \alpha\} $ : $ H $ を境界に持つ正の(閉)半空間(half space)</li>
+<li>$ H^- = H^-(\bf{a} ; \alpha) := \{ \bf{x} \in \bf{R}^n | \bf{a}^T\bf{x} \leq \alpha\} $ : $ H $ を境界に持つ負の(閉)半空間(half space)</li>
+</ul>
+
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}}); </script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script></body></html>
