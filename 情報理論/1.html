@@ -1,0 +1,188 @@
+<html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=yes'><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/default.min.css"><style>h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #737373;
+    background-color: white;
+    margin: 10px 13px 10px 13px;
+}
+table {
+	margin: 10px 0 15px 0;
+	border-collapse: collapse;
+}
+td,th {
+	border: 1px solid #ddd;
+	padding: 3px 10px;
+}
+th {
+	padding: 5px 10px;
+}
+
+a {
+    color: #0069d6;
+    text-decoration: none;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+    background-color: #f5f4ea;
+}
+code {
+    background-color: #f5f4ea;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #f5f4ea;
+    color:#454545;
+    font-size: 11px;
+    padding: 0;
+}
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:10px auto;
+    }
+}
+@media print {
+	body,code,pre code,h1,h2,h3,h4,h5,h6 {
+		color: black;
+	}
+	table, pre {
+		page-break-inside: avoid;
+	}
+}
+</style></head><body><h1 id="-">線形代数と線形符号</h1>
+<h2 id="1-1-">1.1 符号理論とは</h2>
+<h2 id="1-2-">1.2 線形代数の復習</h2>
+<p>$$
+\bf{R}^n = \{ 
+  \begin{pmatrix}
+  x_1 \\
+  \vdots \\
+  x_n
+  \end{pmatrix}
+  | x_1 , \cdots x_n \in \bf{R}
+\}
+$$</p>
+<p>$ \bf{x} = \begin{pmatrix} x_1 \\ \vdots \\ x_n \end{pmatrix},
+  \bf{Y} = \begin{pmatrix} y_1 \\ \vdots \\ y_n \end{pmatrix} 
+  \in \bf{R}^n 
+$ に対して<br>和 $ \bf{x} + \bf{y} = \begin{pmatrix} x_1 + y_1 \\ \vdots \\ x_n + y_n \end{pmatrix}$<br>スカラー倍 $ c\bf{x} = \begin{pmatrix} cx_1 \\ \vdots \\ cx_n \end{pmatrix}$ </p>
+<h3 id="-">ベクトル空間</h3>
+<p>集合$\bf{V}$において、$\bf{x},\bf{y} \in \bf{V}$ に対して,和と呼ばれる$\bf{V}$の元$\bf{x} + \bf{y} $と
+$\bf{x} \in \bf{V}$とスカラー$a$に対して,$\bf{x}$の$a$倍(スカラー倍)と呼ばれる$\bf{V}$の元$a\bf{x}$が定義されて,
+次の性質を満たすとき,$\bf{V}$はベクトル空間(または線形空間)という。</p>
+<h4 id="-">和について</h4>
+<p>${}^\forall \bf{x}, \bf{y}, \bf{z} \in \bf{V}$ </p>
+<ol>
+<li>$ ( \bf{x} + \bf{y}) + \bf{Z} = \bf{x} + ( \bf{y} + \bf{z}) $ (結合則)</li>
+<li>$ \bf{x} + \bf{y} = \bf{y} + \bf{x} $ (交換則)</li>
+<li><strong>零ベクトル</strong>と呼ばれる特別な$\bf{V}$の元$\bf{0}$が存在して、$ \bf{x} + \bf{0} = \bf{x} $ (単位元の存在)</li>
+<li>$ \bf{x} + \bf{x}^{&#39;} = \bf{0} $ となるような$\bf{x}^{&#39;} \in \bf{V}$が存在 (逆元の存在)</li>
+</ol>
+<h4 id="-">和とスカラー倍について</h4>
+<p>$ {}^\forall \bf{x}, \bf{y} \in \bf{V} $, スカラー$a,b$に対して</p>
+<ol>
+<li>$ (a + b)\bf{x} = a\bf{x} + b\bf{x} $ (分配則)</li>
+<li>$ a(\bf{x} + \bf{y}) = a\bf{x} + a\bf{y} $ (分配則)</li>
+<li>$ (ab)\bf{x} = a(b\bf{x})$ (結合則)</li>
+<li>$ 1\bf{x} = \bf{x} $ (単位元の存在)</li>
+</ol>
+
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}}); </script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script></body></html>
