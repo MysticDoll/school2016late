@@ -1,0 +1,192 @@
+<html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=yes'><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/default.min.css"><style>h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #737373;
+    background-color: white;
+    margin: 10px 13px 10px 13px;
+}
+table {
+	margin: 10px 0 15px 0;
+	border-collapse: collapse;
+}
+td,th {
+	border: 1px solid #ddd;
+	padding: 3px 10px;
+}
+th {
+	padding: 5px 10px;
+}
+
+a {
+    color: #0069d6;
+    text-decoration: none;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+    background-color: #f5f4ea;
+}
+code {
+    background-color: #f5f4ea;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #f5f4ea;
+    color:#454545;
+    font-size: 11px;
+    padding: 0;
+}
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:10px auto;
+    }
+}
+@media print {
+	body,code,pre code,h1,h2,h3,h4,h5,h6 {
+		color: black;
+	}
+	table, pre {
+		page-break-inside: avoid;
+	}
+}
+</style></head><body><h1 id="4-2-">4.2 二分探索</h1>
+<p>$[ x_L, x_U ]$ の区間に最小値が存在すると考えられる単峰性関数について考える。
+この区間は不確実の区間と呼ばれる。
+$f(x)$の最小点$x^*$は,十分に小さい区間が得られるまで漸次不確実の区間に帰着していくことにより位置付けられる。
+探索法では,$f(x)$の適切な点での値を用いて最小点は記録される。</p>
+<p>もし,$f(x)$の値が$x_a \in ( x_L , x_U )$ の単一点のみ分かる場合,
+図4.1(a)で描かれているように
+$x^*$の点は$x_L$から$x_a$または,$x_a$から$x_U$の範囲の中に一致しそうである。
+その結果として,利用可能な情報は不確実な区間の帰着するのに十分ではない。
+しかしながら,もし$f(x)$の値が2点分かれば,つまり$x_a$と$x_b$が分かれば、すぐに帰着は可能になる。
+それには3つの可能性があるだろう、いわゆる</p>
+<ul>
+<li>(a) $ f(x_a) &lt; f(x_b) $</li>
+<li>(b) $ f(x_a) &gt; f(x_b) $</li>
+<li>(c) $ f(x_a) = f(x_b) $</li>
+</ul>
+<p>(a) のケースでは$x^{*}$は$ x_L &lt; x^{*} M x_a $ または $ x_a &lt; x^{*} &lt; x_b $ の範囲にあるだろう、
+すなわち、図4.1aで示されるように、$ x_L &lt; x^{*} &lt; x_b $ である。
+$ x_b &lt;^{*} &lt; x_U $ の可能性は明確に除外する、
+なぜならこの範囲は$ f(x) $が$x_b$の左右に一つずつ最小値を持つことを暗示するからである。。
+似たように、(b)のケースでは、図4.1bで示されるように$x^{*}$は$ x_a &lt; x^{*} &lt; x_b $の範囲にあるはずだ。
+(c) のケースでは、$x^{*}$は$ x_a &lt; x^{*} &lt; x_b $ にあるはずだ、
+すなわち図4.1cで示されるように$ x_L &lt; x^{*} &lt; x_b $ と $ x_a &lt; x^{*} &lt; x_U $
+の両方の不等式はともに除外するのに十分だからだ。</p>
+<p>不確実な範囲を帰着していく基本的な戦略はいわゆる二分探索である。
+この方法では,$f(x)$は十分小さな正の$\epsilon$の下、
+$x_a = x_1 - \epsilon / 2$と$x_b = x_1 + \epsilon / 2$ の2点で計算される。
+このとき、$ f(x_a) &lt; f(x_b) $ か $ f(x_a) &gt; f(x_b) $ かによって
+$x_L$から$x_1 + \epsilon /2 $の範囲か、$x_1 - \epsilon /2 $から$x_L$の範囲かを選んで帰着できる。、
+そして$f(x_a) = f(x_b)$の時、範囲は2点を端とする範囲に帰着できるだろう。
+もし$ x_1 =- x_L = x_U - x_1 $ つまり、$ x_1 = (x_L + x_U)/2 $と仮定すると、
+不確実な範囲は即座に半分に帰着できる。同じ手順を帰着された範囲に繰り返すことができる、
+つまり、$x_2$が帰着された範囲の中心の点に位置する場合など、
+$f(x)$は$x_2 - \epsilon / 2$ と $x_2 + \epsilon / 2$で計算することができる。
+例えば、もし二分法が図4.2の関数に適用されるとき、
+不確実な範囲は4回の反復で$0 &lt; x^{*} &lt; 1$から$9/16 + \epsilon / 2 &lt; x^{*} &lt; 5/8 - \epsilon / 2$に帰着される。
+それぞれの反復は不確実な範囲を半分の範囲に帰着し、
+また、従って$k$回の反復で不確実な範囲の広さは
+$I_0 = x_U - x_L $ としたとき $I_k = \frac{1}{2}^kI_0$に帰着される。
+例えば、7回の反復で不確実な範囲は1%未満の大きさの範囲に帰着される。
+計算量の対応は各反復に2回の関数計算が必要になるとして、14回の関数計算になるだろう。</p>
+
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}}); </script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script></body></html>
