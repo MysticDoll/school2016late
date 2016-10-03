@@ -148,44 +148,44 @@ sup {
 	}
 }
 </style></head><body><h1 id="-">凸集合</h1>
-<p>$ \bf{u} \bf{v} \in \bf{R^n}, 0 \leq \lambda \leq 1 $ とする</p>
-<p>$ (1 - \lambda) \bf{u} + \lambda \bf{v} $ : $\bf{u}, \bf{v} $ の凸結合
-$ [ \bf{u}, \bf{v} ] := { (1 - \lambda) \bf{u} + \lambda \bf{v} | 0 \leq \lambda \leq 1 } $ : $ \bf{u}, \bf{v} $ を結んだ線分</p>
-<p>$ \bf{u}_1 , \cdots , \bf{u}_k \in \bf{R^n} , \sum_{i = 1}^{k}{\lambda_i} = 1 $ に対してその線形結合
-$ \sum_{i = 1}^{k}{\lambda_i \bf{u}_i} $ を $ \bf{u}_1 , \cdots , \bf{u}_k $ の凸結合という</p>
+<p>$ \boldsymbol{u} \boldsymbol{v} \in \bf{R^n}, 0 \leq \lambda \leq 1 $ とする</p>
+<p>$ (1 - \lambda) \boldsymbol{u} + \lambda \boldsymbol{v} $ : $\boldsymbol{u}, \boldsymbol{v} $ の凸結合
+$ [ \boldsymbol{u}, \boldsymbol{v} ] := { (1 - \lambda) \boldsymbol{u} + \lambda \boldsymbol{v} | 0 \leq \lambda \leq 1 } $ : $ \boldsymbol{u}, \boldsymbol{v} $ を結んだ線分</p>
+<p>$ \boldsymbol{u}_1 , \cdots , \boldsymbol{u}_k \in \bf{R^n} , \sum_{i = 1}^{k}{\lambda_i} = 1 $ に対してその線形結合
+$ \sum_{i = 1}^{k}{\lambda_i \boldsymbol{u}_i} $ を $ \boldsymbol{u}_1 , \cdots , \boldsymbol{u}_k $ の凸結合という</p>
 <p>一般に $ \bf{u} = \sum_{i = 1}^{k}{\lambda_i \bf{u}_i} $ は</p>
 <ul>
-<li>$ \bf{u}_1 , \cdots , \bf{u}_k  \in \bf{R}^n $ の時 負線形結合</li>
-<li>$ \bf{u}_1 \geq 0  , \cdots , \bf{u}_k \geq 0 $ の時 非負線形結合</li>
-<li>$ \bf{u}_1 + , \cdots , + \bf{u}_k = 1 $ の時 アフィン結合(Affine Combination)</li>
-<li>$ \bf{u}_1 \geq 0  , \cdots , \bf{u}_k \geq 0 $ かつ $ \bf{u}_1 + , \cdots , + \bf{u}_k = 1 $ の時 凸結合</li>
+<li>$ \boldsymbol{u}_1 , \cdots , \boldsymbol{u}_k  \in \bf{R}^n $ の時 負線形結合</li>
+<li>$ \boldsymbol{u}_1 \geq 0  , \cdots , \boldsymbol{u}_k \geq 0 $ の時 非負線形結合</li>
+<li>$ \boldsymbol{u}_1 + , \cdots , + \boldsymbol{u}_k = 1 $ の時 アフィン結合(Affine Combination)</li>
+<li>$ \boldsymbol{u}_1 \geq 0  , \cdots , \boldsymbol{u}_k \geq 0 $ かつ $ \boldsymbol{u}_1 + , \cdots , + \boldsymbol{u}_k = 1 $ の時 凸結合</li>
 </ul>
 <p>$ \phi \neq \bf{S} \in \bf{R}^n $ とする</p>
-<p>$ \bf{S} $ が凸集合 $ \Leftrightarrow {}^\forall \lambda \in [0,1], {}^\forall\bf{u}, \bf{v} \in S,  (1 - \lambda) \bf{u} + \lambda \bf{v} \in S$</p>
+<p>$ \bf{S} $ が凸集合 $ \Leftrightarrow {}^\forall \lambda \in [0,1], {}^\forall\boldsymbol{u}, \boldsymbol{v} \in S,  (1 - \lambda) \boldsymbol{u} + \lambda \boldsymbol{v} \in S$</p>
 <ul>
 <li>$ \lambda \in (0,1)$ としても同じ</li>
 <li>$ S = \bf{\phi} $は凸集合</li>
 </ul>
 <h2 id="-">例</h2>
-<p>LPの実行可能領域 $ \bf{S} := \{ \bf{x} \in \bf{R}^n | A\bf{x} = \bf{b}, \bf{x} \geq \bf{0} \} \in \bf{R}^n $ は凸集合</p>
+<p>LPの実行可能領域 $ \bf{S} := \{ \boldsymbol{x} \in \bf{R}^n | A\boldsymbol{x} = \boldsymbol{b}, \boldsymbol{x} \geq \boldsymbol{0} \} \in \bf{R}^n $ は凸集合</p>
 <h3 id="-">証明</h3>
 <p>$ \bf{S} = \bf{\phi} $ ならば明らかに$\bf{S}$は凸集合</p>
 <p>$ \bf{S} \neq \bf{\phi} $ とする</p>
-<p>${}^\forall \bf{u}, \bf{v} \in \bf{S}, {}^\forall\lambda \in [0,1] $ とする</p>
-<p>$ \bf{x} := (1 - \lambda) \bf{u} + \lambda \bf{u} $ とおく</p>
-<p>$ A\bf{x} = A[(1 - \lambda) \bf{u} + \lambda \bf{v}] \\
-  = (1 - \lambda) A\bf{u} + \lambda A\bf{u} \\
-  = (1 - \lambda) \bf{b} + \lambda \bf{b} \  (∵ \bf{u}, \bf{v} \in \bf{S} = \{ \bf{x} \in \bf{R}^n | A\bf{x} = \bf{b}, \bf{x} \geq \bf{0} \}) \\
-  = \bf{b}
+<p>${}^\forall \boldsymbol{u}, \boldsymbol{v} \in \bf{S}, {}^\forall\lambda \in [0,1] $ とする</p>
+<p>$ \boldsymbol{x} := (1 - \lambda) \boldsymbol{u} + \lambda \boldsymbol{u} $ とおく</p>
+<p>$ A\boldsymbol{x} = A[(1 - \lambda) \boldsymbol{u} + \lambda \boldsymbol{v}] \\
+  = (1 - \lambda) A\boldsymbol{u} + \lambda A\boldsymbol{u} \\
+  = (1 - \lambda) \boldsymbol{b} + \lambda \boldsymbol{b} \  (∵ \boldsymbol{u}, \boldsymbol{v} \in \bf{S} = \{ \boldsymbol{x} \in \bf{R}^n | A\boldsymbol{x} = \boldsymbol{b}, \boldsymbol{x} \geq \boldsymbol{0} \}) \\
+  = \boldsymbol{b}
 $</p>
-<p>$ \bf{x} = (1 - \lambda ) \bf{u} + \lambda \bf{u} \geq \bf{0} \ (∵ \bf{u}, \bf{v} \in \bf{S} = \{ \bf{x} \in \bf{R}^n | A\bf{x} = \bf{b}, \bf{x} \geq \bf{0} \})$</p>
-<p>よって $ \bf{x} = (1 - \lambda) \bf{u} + \lambda \bf{v} \in \bf{S} $ これより $\bf{S}$ は凸集合</p>
+<p>$ \boldsymbol{x} = (1 - \lambda ) \boldsymbol{u} + \lambda \boldsymbol{u} \geq \boldsymbol{0} \ (∵ \boldsymbol{u}, \boldsymbol{v} \in \bf{S} = \{ \boldsymbol{x} \in \bf{R}^n | A\boldsymbol{x} = \boldsymbol{b}, \boldsymbol{x} \geq \boldsymbol{0} \})$</p>
+<p>よって $ \boldsymbol{x} = (1 - \lambda) \boldsymbol{u} + \lambda \boldsymbol{v} \in \bf{S} $ これより $\bf{S}$ は凸集合</p>
 <h2 id="-">超平面 半空間</h2>
-<p>$ \bf{0} \neq \bf{a} \in \bf{R}^n, \alpha \in \bf{R} $とする</p>
+<p>$ \boldsymbol{0} \neq \boldsymbol{a} \in \bf{R}^n, \alpha \in \bf{R} $とする</p>
 <ul>
-<li>$ H = H(\bf{a} ; \alpha) := \{ \bf{x} \in \bf{R}^n | \bf{a}^T\bf{x} = \alpha\} $ : $ \bf{a} $ と $ \alpha $ で定まる超平面(hyper plane)</li>
-<li>$ H^+ = H^+(\bf{a} ; \alpha) := \{ \bf{x} \in \bf{R}^n | \bf{a}^T\bf{x} \geq \alpha\} $ : $ H $ を境界に持つ正の(閉)半空間(half space)</li>
-<li>$ H^- = H^-(\bf{a} ; \alpha) := \{ \bf{x} \in \bf{R}^n | \bf{a}^T\bf{x} \leq \alpha\} $ : $ H $ を境界に持つ負の(閉)半空間(half space)</li>
+<li>$ H = H(\boldsymbol{a} ; \alpha) := \{ \boldsymbol{x} \in \bf{R}^n | \boldsymbol{a}^T\boldsymbol{x} = \alpha\} $ : $ \boldsymbol{a} $ と $ \alpha $ で定まる超平面(hyper plane)</li>
+<li>$ H^+ = H^+(\boldsymbol{a} ; \alpha) := \{ \boldsymbol{x} \in \bf{R}^n | \boldsymbol{a}^T\boldsymbol{x} \geq \alpha\} $ : $ H $ を境界に持つ正の(閉)半空間(half space)</li>
+<li>$ H^- = H^-(\boldsymbol{a} ; \alpha) := \{ \boldsymbol{x} \in \bf{R}^n | \boldsymbol{a}^T\boldsymbol{x} \leq \alpha\} $ : $ H $ を境界に持つ負の(閉)半空間(half space)</li>
 </ul>
 
 <script type="text/x-mathjax-config"> MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}}); </script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script></body></html>
