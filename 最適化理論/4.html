@@ -1,0 +1,207 @@
+<html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=yes'><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/default.min.css"><style>h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #737373;
+    background-color: white;
+    margin: 10px 13px 10px 13px;
+}
+table {
+	margin: 10px 0 15px 0;
+	border-collapse: collapse;
+}
+td,th {
+	border: 1px solid #ddd;
+	padding: 3px 10px;
+}
+th {
+	padding: 5px 10px;
+}
+
+a {
+    color: #0069d6;
+    text-decoration: none;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+    background-color: #f5f4ea;
+}
+code {
+    background-color: #f5f4ea;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #f5f4ea;
+    color:#454545;
+    font-size: 11px;
+    padding: 0;
+}
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:10px auto;
+    }
+}
+@media print {
+	body,code,pre code,h1,h2,h3,h4,h5,h6 {
+		color: black;
+	}
+	table, pre {
+		page-break-inside: avoid;
+	}
+}
+</style></head><body><p>$
+  \begin{cases}
+    f: \boldsymbol{D} \subset \boldsymbol{R}^n \rightarrow \boldsymbol{R}^1 \\
+    \boldsymbol{D} : openset
+  \end{cases}
+$とする</p>
+<ul>
+<li>$f$が1点$\boldsymbol{a} \in \boldsymbol{D}$で2回微分可能
+$\overset{def.}{\Leftrightarrow} f$が$\boldsymbol{x} = \boldsymbol{a}$の近傍で
+(1回)微分可能で、かつ、$f$のすべての(1階)偏導関数が1点$\boldsymbol{x} = \boldsymbol{a}$で微分可能</li>
+<li>$f$が$\boldsymbol{D}$上で2回微分可能
+$\overset{def.}{\Leftrightarrow} {}^\forall \boldsymbol{a} \in \boldsymbol{D}$に対して
+$f$が$\boldsymbol{x} = \boldsymbol{a}$で2回微分可能</li>
+<li>$f$が$\boldsymbol{D}$上で1回連続的微分可能($C^1$級, $f \in C^1(\boldsymbol{D})$)
+$\overset{def.}{\Leftrightarrow} f$が$\boldsymbol{D}$上で1回偏微分可能で、
+かつその(1階次)偏導関数がすべて連続</li>
+</ul>
+<h3 id="thm-f-d-2-rightarrow-f-d-">Thm. $f$が$D$上で2回連続的微分可能 $\Rightarrow f$は$D$上で微分可能</h3>
+<ul>
+<li>$f$が$\boldsymbol{D}$上で2回連続的微分可能($C^2$級, $f \in C^2(\boldsymbol{D})$)
+$\overset{def.}{\Leftrightarrow} f$が$\boldsymbol{D}$上で2回偏微分可能で、
+かつその(2階次までの)偏導関数がすべて連続</li>
+</ul>
+<h3 id="thm-f-d-2-">Thm. $f$が$D$上で2回微分可能</h3>
+<p>$\Rightarrow$ そのヘッセ行列$\nabla^2f(\boldsymbol{x}) = 
+\begin{bmatrix}
+  \frac{\delta^2 f}{\delta x_1^2} \cdots \frac{\delta^2 f}{\delta x_1 x_n} \\
+  \vdots \ddots \vdots \\
+  \frac{\delta^2 f}{\delta x_n x_1} \cdots \frac{\delta^2 f}{\delta x_n^2}
+\end{bmatrix}$
+は対象</p>
+<p>$$$ Thm. 凸関数であるための必要十分条件 1回微分可能の場合
+$
+\begin{cases}
+  \boldsymbol{\phi} \neq \boldsymbol{D} \subset \boldsymbol{R}^n : open convex set \\
+  f: \boldsymbol{D} \rightarrow \boldsymbol{R}^1 : Differentiable
+\end{cases}
+$ とする</p>
+<ul>
+<li>(0) $f$が$D$上で凸関数</li>
+<li>$\Leftrightarrow$ (1) [$f$と$\nabla f$の両方を用いた形]<ul>
+<li>${}^\forall \boldsymbol{x}, \boldsymbol{y} \in \boldsymbol{D}$に対して
+$f(\boldsymbol{y}) \geq f(\boldsymbol{x}) + \nabla f(\boldsymbol{x})^T (\boldsymbol{y} - \boldsymbol{x})
+\cdots (*)$ 勾配不等式</li>
+</ul>
+</li>
+<li>$\Leftrightarrow$ (2) [$\nabla f$だけを用いた形]<ul>
+<li>${}^\forall \boldsymbol{x}, \boldsymbol{y} \in \boldsymbol{D}$に対して
+$(\nabla f(\boldsymbol{y}) - \nabla f(\boldsymbol{x})^T (\boldsymbol{y} - \boldsymbol{x}) \geq 0
+\cdots (0)$<ul>
+<li>(0)の性質は$\nabla f$の単調性(monotonicity)という</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}}); </script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script></body></html>
