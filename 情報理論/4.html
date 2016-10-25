@@ -1,0 +1,228 @@
+<html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=yes'><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/default.min.css"><style>h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #737373;
+    background-color: white;
+    margin: 10px 13px 10px 13px;
+}
+table {
+	margin: 10px 0 15px 0;
+	border-collapse: collapse;
+}
+td,th {
+	border: 1px solid #ddd;
+	padding: 3px 10px;
+}
+th {
+	padding: 5px 10px;
+}
+
+a {
+    color: #0069d6;
+    text-decoration: none;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+    background-color: #f5f4ea;
+}
+code {
+    background-color: #f5f4ea;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #f5f4ea;
+    color:#454545;
+    font-size: 11px;
+    padding: 0;
+}
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:10px auto;
+    }
+}
+@media print {
+	body,code,pre code,h1,h2,h3,h4,h5,h6 {
+		color: black;
+	}
+	table, pre {
+		page-break-inside: avoid;
+	}
+}
+</style></head><body><h3 id="-1-2-">復習 [定義1.2]</h3>
+<p>体$F$上の$(n,k)$線形符号$C$とはベクトル空間$\boldsymbol{F}^n$の$k$次部分空間である</p>
+<h2 id="-2-1-">[定義2.1]</h2>
+<p>$C$を体$F$上の$(n,k)$線形符号とする</p>
+<p>行が$C$の基底であるような$k \times n$行列を$C$の生成行列という</p>
+<h3 id="-">注</h3>
+<p>$C$が体$F$上の線形符号であるとき、
+$G$が$C$の生成行列ならば、</p>
+<p>$C = \lbrace \boldsymbol{u} \boldsymbol{G} \mid \boldsymbol{u} \in \boldsymbol{F}^k$</p>
+<p>$(\boldsymbol{u} \boldsymbol{G} =
+(u_1, \cdots , u_k)\begin{pmatrix} \boldsymbol{e}_1 \\ \vdots \\ \boldsymbol{e}_k \end{pmatrix} 
+= u_1 \boldsymbol{e}_1 + \cdots + u_k \boldsymbol{e}_k
+)$</p>
+<h2 id="-">線形符号の符号化規則</h2>
+<p>符号化したいメッセージ($q^k$通り)</p>
+<p>$\downarrow$</p>
+<p>$\boldsymbol{u} \in \boldsymbol{F}^k$</p>
+<p>$\downarrow$</p>
+<p>$\boldsymbol{u} \boldsymbol{G}$ に符号化する</p>
+<h3 id="-2-1-">[例 2.1]</h3>
+<p>$\boldsymbol{F}_2$上の$(7,4)$線形符号$C$の基底が</p>
+<p>$\lbrace (1000110),(0100011),(0010101),(0001111) \rbrace$</p>
+<p>であるとき $C$の生成行列$\boldsymbol{G}$は</p>
+<p>$ \boldsymbol{G} = \begin{pmatrix} 1000110 \\ 0100011 \\ 0010101 \\ 0001111 \end{pmatrix}$</p>
+<p>情報ベクトル$\boldsymbol{u} = (1001)$を符号化すると</p>
+<p>$
+(1001) \begin{pmatrix} 1000110 \\ 0100011 \\ 0010101 \\ 0001111 \end{pmatrix}
+= (1000110) + (0001111) = (1001001)
+$</p>
+<p>また、</p>
+<p>$ \boldsymbol{G}^{\prime} = \begin{pmatrix} 1000110 \\ 1100101 \\ 1010011 \\ 1001001 \end{pmatrix}$</p>
+<p>もまた$C$の生成行列であり、このとき情報ベクトル$\boldsymbol{u}$を符号化すると</p>
+<p>$
+(1001) \begin{pmatrix} 1000110 \\ 1100101 \\ 1010011 \\ 1001001 \end{pmatrix}
+= (1000110) + (1001001) = (0001111)
+$</p>
+<h2 id="-">組織符号</h2>
+<p>$\boldsymbol{G}$が$(n,k)$線形符号$C$の生成行列であるとき、</p>
+<p>$\boldsymbol{G}$に行基本変形を施してできる行列$\boldsymbol{G}^{\prime}$もまた、$C$の生成行列</p>
+<p>与えられた生成行列に対して行基本変形を繰り返し施すことにより、</p>
+<p>$
+\boldsymbol{G} = \begin{pmatrix} \boldsymbol{I}_k &amp; \boldsymbol{P} \end{pmatrix} = 
+\left( \begin{array}{cccc|ccc}
+  1 &amp;   &amp;   &amp;   &amp; &amp; &amp; \\
+    &amp; 1 &amp;   &amp;   &amp;  &amp; \ast  &amp; \\
+    &amp;   &amp; \ddots &amp;   &amp;  &amp; &amp;  \\
+    &amp;   &amp;   &amp; 1 &amp;  &amp; &amp;  \\
+\end{array} \right)
+$</p>
+<p>の形にすることができる</p>
+<p>このとき、情報ベクトル$\boldsymbol{u} = (u_1, u_2 , \cdots , u_k)$を符号化すると</p>
+<p>$
+\boldsymbol{u} \boldsymbol{G} =
+  \boldsymbol{u} \begin{pmatrix}\boldsymbol{I}_k &amp; \boldsymbol{P} \end{pmatrix} \\
+  = \begin{pmatrix} \boldsymbol{u} \boldsymbol{I}_k &amp; \boldsymbol{u} \boldsymbol{P} \end{pmatrix} \\
+  = \begin{pmatrix} u_1 &amp; u_2 &amp; \cdots &amp; u_k &amp; C_{k+1} &amp; \cdots &amp; C_n \end{pmatrix}
+$</p>
+<p>($\begin{pmatrix} C_{k+1} &amp; \cdots &amp; C_n \end{pmatrix} =
+\begin{pmatrix} \boldsymbol{I}_k &amp; \boldsymbol{P} \end{pmatrix}$ )</p>
+<h1 id="2-2-">2.2 双対符号とパリティ検査行列</h1>
+<h2 id="-">双対符号</h2>
+<h3 id="-2-2-">[定義2.2]:(内積)</h3>
+<p>$\boldsymbol{x}, \boldsymbol{y} \in \boldsymbol{F}^n$に対して</p>
+<p>$\boldsymbol{x} = (x_1, x_2, \cdots , x_n )$</p>
+<p>$\boldsymbol{y} = (y_1, y_2, \cdots , y_n )$ のとき</p>
+<p>$\boldsymbol{x} \bullet \boldsymbol{y} = x_1 y_1 + x_2 y_2 + \cdots + x_n y_n $
+を $\boldsymbol{x} , \boldsymbol{y} $の内積という</p>
+<p>さらに、 $\boldsymbol{x}$と$\boldsymbol{y}$が直行 $\Leftrightarrow \boldsymbol{x} \bullet \boldsymbol{y} = 0$</p>
+<h3 id="-2-3-">[定義2.3]</h3>
+<p>体$F$上の$(n,k)$線形符号$C$に対して</p>
+<p>$
+C^\perp =
+  \lbrace \boldsymbol{v} \in \boldsymbol{F}^n \mid
+  \boldsymbol{v} \bullet \boldsymbol{c} = 0 {}^\forall \boldsymbol{c} \in C
+  \rbrace
+$</p>
+<p>を $C$の双対符号という</p>
+
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}}); </script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script></body></html>
