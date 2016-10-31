@@ -1,0 +1,211 @@
+<html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=yes'><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/default.min.css"><style>h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #737373;
+    background-color: white;
+    margin: 10px 13px 10px 13px;
+}
+table {
+	margin: 10px 0 15px 0;
+	border-collapse: collapse;
+}
+td,th {
+	border: 1px solid #ddd;
+	padding: 3px 10px;
+}
+th {
+	padding: 5px 10px;
+}
+
+a {
+    color: #0069d6;
+    text-decoration: none;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+    background-color: #f5f4ea;
+}
+code {
+    background-color: #f5f4ea;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #f5f4ea;
+    color:#454545;
+    font-size: 11px;
+    padding: 0;
+}
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:10px auto;
+    }
+}
+@media print {
+	body,code,pre code,h1,h2,h3,h4,h5,h6 {
+		color: black;
+	}
+	table, pre {
+		page-break-inside: avoid;
+	}
+}
+</style></head><body><p>$ Q \in \boldsymbol{R}^{n \times n} $ ($\text{sym}$とは限らない)</p>
+<h2 id="-text-def-">$\text{Def}$</h2>
+<p>$Q$が正定値(正定符号, 正値, positive definite, pd.)</p>
+<p>$\overset{def.}{\Leftrightarrow} \boldsymbol{0} \neq {}^\forall \boldsymbol{x} \in \boldsymbol{R}^n $
+に対して $\boldsymbol{x}^TQ\boldsymbol{x} &gt; 0$</p>
+<p>$
+\begin{cases}
+  \text{1)} {}^\forall \boldsymbol{x} \in \boldsymbol{R}^n , \boldsymbol{x}^TQ\boldsymbol{x} \geq 0 \\
+  \text{2)} \boldsymbol{x}^TQ\boldsymbol{x} = 0 \Leftrightarrow \boldsymbol{x} = \boldsymbol{0}
+\end{cases}
+$</p>
+<p>$Q$ が半正定値(positive semi-definite, psd.)</p>
+<p>$\Leftrightarrow {}^\forall \boldsymbol{x} \in \boldsymbol{R}^n , \boldsymbol{x}^TQ\boldsymbol{x} \geq 0$</p>
+<h2 id="-text-prop-">$ \text{prop} $</h2>
+<ul>
+<li>$Q$がp.d. $\Leftrightarrow \hat{Q} = \frac{Q + Q^T}{2}$ ($Q$の対称部分)がp.d. </li>
+<li>$Q$がp.s.d. $\Leftrightarrow \hat{Q}$ がp.d. </li>
+</ul>
+<h2 id="-text-prop-">$ \text{prop} $</h2>
+<p>$Q$ が$\text{sym}$のとき,次の3つは互いに同値(したがって$Q$の固有値はすべて実数)</p>
+<ol>
+<li>$Q$ がp.(s.)d</li>
+<li>$Q$ のすべての固有値が正(非負)</li>
+<li>$Q$ のすべての主小行列式(principal minors)が正(非負)</li>
+</ol>
+<h3 id="-text-note-">$\text{Note.}$</h3>
+<p>$Q$がp.d.のときは 3はもっと緩く、</p>
+<ul>
+<li>$Q$のすべての首座小行列式(leading principal minors)が正</li>
+</ul>
+<p>に置き換えられる</p>
+<h2 id="-text-thn-2-3-2-">$\text{Thn.2.3}$ (凸関数であるための条件(2回微分可能))</h2>
+<p>$\phi \neq D \subset \boldsymbol{R}^n$</p>
+<p>$f: D \rightarrow \boldsymbol{R}$ は$D$上で2回微分可能</p>
+<p>とする</p>
+<ul>
+<li>$(0)$ $f$が$D$上の凸関数</li>
+</ul>
+<p>$\Leftrightarrow$</p>
+<ul>
+<li>$(1)$ $f$のヘッセ行列$\nabla^2 f(\boldsymbol{x})$が$D$上で半正定値(p.s.d.)<ul>
+<li>$\text{i.e. ,} {}^\forall \boldsymbol{x} \in D ,
+ {}^\forall \boldsymbol{u} \in \boldsymbol{R}^n,
+ \boldsymbol{u}^T \nabla^2 f(\boldsymbol{x}) \boldsymbol{u} \geq 0$</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>$(0^\prime)$ $f$が$D$上の狭義凸関数</li>
+</ul>
+<p>$\Leftrightarrow$</p>
+<ul>
+<li>$(1^\prime)$ $f$のヘッセ行列$\nabla^2 f(\boldsymbol{x})$が$D$上で正定値(p.d.)<ul>
+<li>$\text{i.e. ,} {}^\forall \boldsymbol{x} \in D ,
+ \boldsymbol{0} \neq {}^\forall \boldsymbol{u} \in \boldsymbol{R}^n,
+ \boldsymbol{u}^T \nabla^2 f(\boldsymbol{x}) \boldsymbol{u} &gt; 0 $</li>
+</ul>
+</li>
+</ul>
+<h4 id="-1-prime-f-">※ $(1^\prime)$は$f$が狭義凸であるための十分条件であるが必要条件ではない</h4>
+
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}}); </script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script></body></html>
