@@ -1,0 +1,249 @@
+<html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=yes'><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/default.min.css"><style>h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #737373;
+    background-color: white;
+    margin: 10px 13px 10px 13px;
+}
+table {
+	margin: 10px 0 15px 0;
+	border-collapse: collapse;
+}
+td,th {
+	border: 1px solid #ddd;
+	padding: 3px 10px;
+}
+th {
+	padding: 5px 10px;
+}
+
+a {
+    color: #0069d6;
+    text-decoration: none;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+    background-color: #f5f4ea;
+}
+code {
+    background-color: #f5f4ea;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #f5f4ea;
+    color:#454545;
+    font-size: 11px;
+    padding: 0;
+}
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:10px auto;
+    }
+}
+@media print {
+	body,code,pre code,h1,h2,h3,h4,h5,h6 {
+		color: black;
+	}
+	table, pre {
+		page-break-inside: avoid;
+	}
+}
+</style></head><body><h3 id="-2-3-">[定義2.3]</h3>
+<p>体$F$上の$(n,k)$線形符号$C$に対して</p>
+<p>$
+C^\perp =
+  \lbrace \boldsymbol{v} \in \boldsymbol{F}^n \mid
+  \boldsymbol{v} \bullet \boldsymbol{c} = 0 {}^\forall \boldsymbol{c} \in C
+  \rbrace
+$</p>
+<p>を $C$の双対符号という</p>
+<h4 id="-">注</h4>
+<p>$C^\perp$は$(n,n-k)$線形符号である</p>
+<h4 id="-">注</h4>
+<p>$ C^{\perp\perp}=C $</p>
+<h4 id="-">注</h4>
+<p>$C$の基底を$\lbrace \boldsymbol{e}_1 , \cdots , \boldsymbol{e}_k \rbrace $とするとき</p>
+<p>$\boldsymbol{v} \in C^\perp \\
+  \Leftrightarrow \boldsymbol{v} \bullet \boldsymbol{e}_i = 0 \ , \ i = 1,2,\cdots,k  \\
+  \Leftrightarrow
+    \boldsymbol{v} \begin{pmatrix}
+      \boldsymbol{e}_{1}^T  &amp; \boldsymbol{e}_{2}^T &amp; \cdots &amp; \boldsymbol{e}_{k}^T
+    \end{pmatrix} = \begin{pmatrix} 0 &amp; 0 &amp; \cdots &amp; 0 \end{pmatrix}
+  \\
+  \Leftrightarrow \boldsymbol{e} G^T = \boldsymbol{0}
+$</p>
+<p>ただし$G$は$C$の生成行列</p>
+<h2 id="-b-">(b)パリティ検査行列</h2>
+<h3 id="-2-4-">[定義2.4]</h3>
+<p>体$F$上の$(n,k)$線形符号$C$に対して</p>
+<p>$C^\perp$の生成行列を,$C$の(パリティ)検査行列という</p>
+<h4 id="-">注</h4>
+<p>$H$を$C$のパリティ検査行列とすると</p>
+<p>$\boldsymbol{c} \in C \Leftrightarrow \boldsymbol{c} H^T = \boldsymbol{0}$</p>
+<p>よって</p>
+<p>$C = \lbrace \boldsymbol{c} \in \boldsymbol{F}^n \mid \boldsymbol{c} H^T = \boldsymbol{0} \rbrace$</p>
+<p>(参考: $C = \lbrace \boldsymbol{u}G \mid \boldsymbol{u} \in \boldsymbol{F}^k \rbrace$)</p>
+<h4 id="-">注</h4>
+<p>$G$を$C$の生成行列,
+$H$を$C$のパリティ検査行列とするとき</p>
+<p>$GH^T = O$</p>
+<h3 id="-">パリティ検査行列の求め方</h3>
+<p>$G = \begin{bmatrix} I_k &amp; P \end{bmatrix}$を$(n,k)$線形符号$C$の生成行列とすると</p>
+<p>このとき$H = \begin{bmatrix} - P^T &amp; I_{n-k} \end{bmatrix}$とおくと</p>
+<p>$GH^T \\
+      = \begin{bmatrix}I_k &amp; P \end{bmatrix} \begin{bmatrix} -P \\ I_{n-k} \end{bmatrix} \\
+      = -I_k P + P I_{n-K} \\
+      = -P + P = O
+$</p>
+<p>となり, $H$は$C$のパリティ検査行列である</p>
+<h4 id="-2-2-">[例2.2]</h4>
+<p>生成行列 $G = 
+\begin{bmatrix}
+  1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 0 \\
+  0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 \\
+  0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 1 \\
+  0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 1
+\end{bmatrix}
+$</p>
+<p>パリティ検査行列</p>
+<p>$H = 
+\begin{bmatrix}
+  1 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 \\
+  1 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 0 \\
+  0 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 1 \\
+\end{bmatrix}
+$</p>
+<h5 id="ex">ex</h5>
+<p>$
+\begin{pmatrix} 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 \end{pmatrix}
+\begin{pmatrix}
+  1 &amp; 1 &amp; 0 \\
+  1 &amp; 0 &amp; 1 \\
+  0 &amp; 1 &amp; 1 \\
+  1 &amp; 1 &amp; 1 \\
+  1 &amp; 0 &amp; 0 \\
+  0 &amp; 1 &amp; 0 \\
+  0 &amp; 0 &amp; 1
+\end{pmatrix} = \begin{pmatrix} 0 &amp; 0 &amp; 0 \end{pmatrix}
+$</p>
+<h1 id="2-3-">2.3 符号の最小距離</h1>
+<h2 id="-2-7-">[定義2.7]</h2>
+<p>ブロック符号$C$について
+$d_{\min} (C) =
+  \underset{\boldsymbol{x + y} \\ \boldsymbol{x},\boldsymbol{y} \in C}{\min}
+    d_H(\boldsymbol{x},\boldsymbol{y})
+$</p>
+<p>を $C$の最小距離という</p>
+<p>($d_H$は$\boldsymbol{x},\boldsymbol{y}$のハミング距離)</p>
+<h2 id="-2-1-">[定理2.1]</h2>
+<p>線形符号$C$について</p>
+<p>$d_\min (C) =
+  \underset{\boldsymbol{x} \in C \\ \boldsymbol{x \neq 0}}{\min}
+    d_H(w_H (\boldsymbol{x}) 
+$</p>
+<p>($w_H(\boldsymbol{x}$ は$\boldsymbol{x}$の(ハミング)重み $=$ 含まれる$0$でない記号の個数)</p>
+<h3 id="-">照明</h3>
+<p>$w_(\boldsymbol{x}) = d_H(\boldsymbol{x,0})$であり</p>
+<p>$\boldsymbol{0} \in C$であるので</p>
+<p>$ d(C) \leq \underset{\boldsymbol{x} \in C \\ \boldsymbol{x \neq 0}}{d_H(\boldsymbol{x}, \boldsymbol{0}})$</p>
+
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}}); </script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script></body></html>
