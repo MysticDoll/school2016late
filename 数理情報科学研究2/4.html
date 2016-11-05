@@ -1,0 +1,246 @@
+<html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=yes'><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/default.min.css"><style>h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #737373;
+    background-color: white;
+    margin: 10px 13px 10px 13px;
+}
+table {
+	margin: 10px 0 15px 0;
+	border-collapse: collapse;
+}
+td,th {
+	border: 1px solid #ddd;
+	padding: 3px 10px;
+}
+th {
+	padding: 5px 10px;
+}
+
+a {
+    color: #0069d6;
+    text-decoration: none;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+    background-color: #f5f4ea;
+}
+code {
+    background-color: #f5f4ea;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #f5f4ea;
+    color:#454545;
+    font-size: 11px;
+    padding: 0;
+}
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:10px auto;
+    }
+}
+@media print {
+	body,code,pre code,h1,h2,h3,h4,h5,h6 {
+		color: black;
+	}
+	table, pre {
+		page-break-inside: avoid;
+	}
+}
+</style></head><body><h1 id="4-4-">4.4 黄金分割探索</h1>
+<p>主なFibonacci探索の不利益は反復の回数を入力として与えなければならないことである。
+目的関数の極小または最小値が望ましい正確さを達成するまで反復を続けるような探索法が
+いわゆる黄金分割探索である。
+このアプローチでは、図4.8で示されるようにFibonacci探索のように区間列
+$\lbrace I_1, I_2, I_3 , \cdots　\rbrace$を、$(4.2)$の再帰的関数を用いて生成する。
+連続した区間を生み出す規則はどの隣接した二つの区間の比も一定になるものである、すなわち</p>
+<p>$$\frac{I_k}{I_{k+1}} = \frac{I_{k+1}}{I_{k+2}} = \frac{I_{k+2}}{I_{k+3}} = \cdots = K \ \text{(4.19)}$$</p>
+<p>つまり、</p>
+<p>$$
+  \frac{I_k}{I_{k+2}} = K^2 \ \text{(4.20)} \\
+  \frac{I_k}{I_{k+3}} = K^3
+$$</p>
+<p>などが成り立つ。</p>
+<p>式$(4.2)$を$I_{k+2}$で割るにあたり、</p>
+<p>$$\frac{I_k}{I_{k+2}} = \frac{I_{k+1}}{I_{k+2}} + 1 \ \text{(4.21)}$$</p>
+<p>得る、そして式$(4.19)$から式$(4.20)$までを用いると</p>
+<p>$$K^2 = K + 1 \ \text{(4.22)}$$</p>
+<p>今,$K$を解くと</p>
+<p>$$K = \frac{1 \pm \sqrt{5}}{2} \ \text{(4.23)}$$</p>
+<p>を得る。</p>
+<p>$K$の負の値は不適切なので、$K = 1.618034$となる。
+この定数は黄金比として有名である。この用語は古代ギリシャで辺の比が$1 : K$
+となる四角形が最も美しい四角形であると考えられていた事実に由来していて、
+そしてその後黄金比として知られるようになったものである。
+同様に、$\lbrace I_1, I_1/K , I_1 / K^2 , \dots , I_1 / K^{n-1} \rbrace$
+の数列は黄金分割数列として知られるようになった</p>
+<p>左の区間が常に選択された条件下での黄金分割探索が図4.8に示されている。
+図のように、この探索法は多くの点でFibonacci探索に似ている。
+2つの例外は</p>
+<ol>
+<li>連続した区間はnに依存しない。従って、反復は不確実な区間か目的関数の値の変化がある許容誤差
+$\epsilon$より低くなるまで繰り返される。</li>
+<li>連続した区間同士の比は、つまり$F_{n-k-1} / F_{n-k}$は、式$(4.22)$-$(4.23)$により
+$$\frac{1}{K} = K - 1 = 0.618034$$
+になるような$1/K$に置き換えられる。</li>
+</ol>
+<p>である。</p>
+<p>黄金分割探索の効率は簡単にFibonacci探索の効率と比較できる。
+既知の、大きな値の$n$を適用する$F_n$と$K$の間の関係は</p>
+<p>$$F_n \approx \frac{K^{n+1}}{\sqrt{5}} \ \text{(4.24)}$$</p>
+<p>である(e.g. $n=11, F_n =1.44$ かつ $K^{n+1} / \sqrt{5} \approx 144.001$ の場合)
+従って、式$(4.5)$と式$(4.24)$はFibonacci探索に対して、</p>
+<p>$$ \Lambda_F = I_n = \frac{I_1}{F_n} \approx \frac{\sqrt{5}}{K^{n+1}} I_1 $$</p>
+<p>のような不確実な範囲を与える。</p>
+<p>似たように、黄金分割探索に対しては,</p>
+<p>$$\Lambda_{GS} = I_n = \frac{I_1}{K^{n-1}}$$</p>
+<p>それゆえに</p>
+<p>$$ \frac{\Lambda{GS}}{\lambda_F} = \frac{K^2}{\sqrt{5}} \approx 1.17 $$</p>
+<p>が成り立つ。</p>
+<p>従って、もし反復の回数が二つの方法で同じであれば、黄金分割探索法の不確実な範囲は、
+Fibonacci探索の不確実な範囲と比べて$17\%$大きな範囲となる。
+あるいは、黄金分割探索はFibonacci探索と同じだけの正確さを達成するためにより多くの反復を必要とするだろう。
+しかしながら、この不利益は合計の反復回数を最適化の開始時に与える必要がない事実によって相殺される。</p>
+<p>黄金分割探索の実装は以下のものである</p>
+<h2 id="-4-2-">アルゴリズム4.2 黄金分割探索</h2>
+<h3 id="step1">Step1</h3>
+<p>$x_{L,1}, x_{U,1}, \epsilon$を入力する </p>
+<h3 id="step2">Step2</h3>
+<p>$I_1 = x_{U,1} - x_{L,1}, K = 1.618034$ と割り当て、</p>
+<p>$$
+\begin{array}{cc}
+    I_2 = i_1 / K \\
+    x_{a,1} = x_{U,1} - I_2, &amp; x_{b,1} = x_{L,1} + I_2 \\
+    f_{a,1} = f(x_{a,1}), &amp; f_{b,1} = f(x_{b,1})
+\end{array}
+$$</p>
+<p>を計算し、 $k = 1$とおく。</p>
+<h3 id="step3">Step3</h3>
+<p>$$ I_{k+2} = I_{k+1} / K $$
+を計算する。</p>
+<p>$f_{a,k} \geq f{b,k}$の場合、</p>
+<p>$x_{L,k+1}, x_{U,k+1}, x_{a,k+1}, x_{b,k+1}, f_{a,k+1}, f_{b,k+1}$</p>
+<p>を式$(4.7)$から$(4.12)$を用いて更新する。</p>
+<p>さもなければ、つまり$f_{a,k} &lt; f_{b,k}$の場合、式$(4.13)$から$(4.18)$を用いて、情報を更新する。</p>
+<h3 id="step4">Step4</h3>
+<p>$I_k &lt; \epsilon$または$x_{a,k+1} &gt; x_{b,k+1}$の場合は、以下を実行する</p>
+<ul>
+<li>$f_{a,k+1} &gt; f_{b,k+1}$ の場合<ul>
+<li>$x^\ast = \frac{1}{2}(x_{b,k+1} + x_{u,k+1)}$を計算する</li>
+</ul>
+</li>
+<li>$f_{a,k+1} = f_{b,k+1}$ の場合<ul>
+<li>$x^\ast = \frac{1}{2}(x_{a,k+1} + x_{a,k+1)}$を計算する</li>
+</ul>
+</li>
+<li>$f_{a,k+1} &lt; f_{b,k+1}$ の場合<ul>
+<li>$x^\ast = \frac{1}{2}(x_{L,k+1} + x_{a,k+1)}$を計算する</li>
+</ul>
+</li>
+</ul>
+<p>$f^\ast = f(x^\ast)$ を計算する
+$x^\ast, f^\ast$を出力し、終了</p>
+<h3 id="step5">Step5</h3>
+<p>$k = k + 1$と置き、Step3から繰り返す。</p>
+
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}}); </script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script></body></html>
