@@ -74,7 +74,7 @@ $$F_n \approx
 \frac{K^{n+1}}{\sqrt{5}}
 \ \text{(4.24)}$$
 
-である(e.g. $n=11, F_n =1.44$ の場合 $K^{n+1} /
+である(e.g. $n=11, F_n =144$ かつ $K^{n+1} /
 \sqrt{5} \approx 144.001$ )
 従って、式$(4.5)$と式$(4.24)$はFibonacci探索に対して、
 
@@ -93,8 +93,8 @@ $$\Lambda_{GS} = I_n =
 それゆえに
 
 $$
-\frac{\Lambda_{GS}}{\lambda_F}
-= \frac{K^2}{\sqrt{5}}
+\frac{\Lambda_{GS}}{\Lambda_F}
+\approx \frac{K^2}{\sqrt{5}}
 \approx 1.17 $$
 
 が成り立つ。
@@ -105,6 +105,8 @@ Fibonacci探索の不確実な範囲と比べて$17\%$大きな範囲となる�
 しかしながら、この不利益は合計の反復回数を最適化の開始時に与える必要がない事実によって相殺される。
 
 黄金分割探索の実装は以下のものである
+
+\newpage
 
 \subsection*{アルゴリズム4.2 黄金分割探索}\label{-4-2-}
 
