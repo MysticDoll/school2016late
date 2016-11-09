@@ -168,25 +168,21 @@ x_{b,k} \rbrack$と$\lbrack x_{a,k}
 , x_{U,k} \rbrack$ のどちらの範囲にも含まれるので
 上のどちらかの割り当てが使われる。
 
-上記の手順は図4.7に示されるように、 $$ I_{k+2} = I_n$$ かつ $$
+上記の手順は図4.7に示されるように、 $$ I_{k+2} = I_n$$
+の場合、$k=n-2$になるまで繰り返され、 $$
 x^\ast = x_{a,k+1} = x_{b, k+1} $$
-の場合、$k=n-2$になるまで繰り返される。
 明らかに,最小値はある許容誤差$\pm 1 / F_n$の間の値に決まるだろう。
 
-$x^\ast$の誤差は、二分探索法の1段階の適用時の二分の一になるだろう。
+$x^\ast$の誤差は、二分探索法の1段階を適用することで二分の一になるだろう。
 これは、$\epsilon \textless{} 1 / F_n$の下で、
+
 $$ x^\ast = \begin{cases}
-x_{a,k+1} + \frac{1}{2F_n} \&
-\text{if} \& f(x_{a,k+1} + \epsilon )
-\textless{} f(x_{a,k+1}) \\
-x_{a,k+1} + \frac{\epsilon}{2} \&
-\text{if} \& f(x_{a,k+1} + \epsilon )
-= f(x_{a,k+1}) \\ x_{a,k+1} -
-\frac{1}{2F_n} \& \text{if} \&
-f(x_{a,k+1} + \epsilon ) \textgreater{}
-f(x_{a,k+1}) \\
+x_{a,k+1} + \frac{1}{2F_n} & \text{if} \ f(x_{a,k+1} + \epsilon ) \textless{} f(x_{a,k+1}) \\
+x_{a,k+1} + \frac{\epsilon}{2} & \text{if} \ f(x_{a,k+1} + \epsilon ) = f(x_{a,k+1}) \\
+x_{a,k+1} - \frac{1}{2F_n} & \text{if} \ f(x_{a,k+1} + \epsilon ) \textgreater{} f(x_{a,k+1}) \\
 \end{cases} $$
-と$x\ast$を定めたときに、点$x=x_{a,k+a} +
+
+と$x^\ast$を定めたときに、点$x=x_{a,k+a} +
 \epsilon$で$f(x)$を評価することで達成される。
 
 もし$n$がとても大きい場合、$x_{a,k}$と$x_{b,k}$の差はとても小さくなる、
@@ -243,7 +239,7 @@ f_{b.k}$であれば式$(4.13)$から$(4.18)$を使って情報を更新する�
 もし$k = n - 2$または$x_{a,k+1} \textgreater{}
 x_{b,k+1}$であれば、 $x^\ast =
 x_{a,k+1}$と$f^\ast =
-f(x\ast)$を出力し、終了する。
+f(x^\ast)$を出力し、終了する。
 
 さもなくば、$k = k + 1$と置き、Step4からの手順を繰り返す。
 
