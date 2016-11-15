@@ -1,0 +1,220 @@
+<html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=yes'><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/default.min.css"><style>h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #737373;
+    background-color: white;
+    margin: 10px 13px 10px 13px;
+}
+table {
+	margin: 10px 0 15px 0;
+	border-collapse: collapse;
+}
+td,th {
+	border: 1px solid #ddd;
+	padding: 3px 10px;
+}
+th {
+	padding: 5px 10px;
+}
+
+a {
+    color: #0069d6;
+    text-decoration: none;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+    background-color: #f5f4ea;
+}
+code {
+    background-color: #f5f4ea;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #f5f4ea;
+    color:#454545;
+    font-size: 11px;
+    padding: 0;
+}
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:10px auto;
+    }
+}
+@media print {
+	body,code,pre code,h1,h2,h3,h4,h5,h6 {
+		color: black;
+	}
+	table, pre {
+		page-break-inside: avoid;
+	}
+}
+</style></head><body><h3 id="-3-1-">[定理 3.1]</h3>
+<p>$C$をブロック符号とし $d = d_\min (C)$ とする</p>
+<p>このとき, $t \in \boldsymbol{N}$に対して</p>
+<p>$C$は$t$個以下の誤りを訂正可能$\Leftrightarrow t &lt; \frac{d}{2} 
+(\Leftrightarrow t \leq \lfloor \frac{d-1}{2} \rfloor)$</p>
+<h4 id="-">証明</h4>
+<h5 id="-leftarrow-">$(\Leftarrow)$</h5>
+<p>各$c_i \in C$に対して</p>
+<p>$
+  S(\boldsymbol{c}_i) = \lbrace
+    \boldsymbol{y} \in \boldsymbol{F}^n : d_H(\boldsymbol{c}_i ,\boldsymbol{y}) &lt; \frac{d}{2}
+  \rbrace
+  (i = 1, 2, \dots , M)
+$</p>
+<p>とおくと</p>
+<p>$S(\boldsymbol{c}_i) \cap S(\boldsymbol{c}_j) = \emptyset (i \neq j)$</p>
+<p>となる。 なぜならば</p>
+<p>${}^\forall \boldsymbol{x} \in S(\boldsymbol{c}_i)$に対して</p>
+<p>$d_H(\boldsymbol{c}_j,\boldsymbol{x}) \geq d_H(\boldsymbol{c}_i, \boldsymbol{c}_j) -
+d_H (\boldsymbol{c}_i, \boldsymbol{x}) &gt;
+\frac{d}{2}
+\\ \because d_H(\boldsymbol{c}_i, \boldsymbol{c}_j) \geq d,
+d_H (\boldsymbol{c}_i, \boldsymbol{x}) &lt; \frac{d}{2}
+$</p>
+<p>よって$\boldsymbol{x} \not\in S(\boldsymbol{c}_j)$</p>
+<p>よって受信者が$\boldsymbol{r} \in \boldsymbol{F}^n$を受信したときに
+$d(\boldsymbol{c}_i, \boldsymbol{r})$が最小であるような符号を$\boldsymbol{c}_i$に復号すればよい</p>
+<p>なぜならば、</p>
+<p>送信者が$\boldsymbol{c}_i$以外の符号語$\boldsymbol{c}_j$を送信したとすると
+誤りが$t$個以下であるので</p>
+<p>$\frac{d}{2} &gt; t \geq d(\boldsymbol{c}_j, \boldsymbol{r}) \geq d(\boldsymbol{c}_i, \boldsymbol{r})$</p>
+<p>となるので$\boldsymbol{r} \in S(\boldsymbol{c}_i) \cap S(\boldsymbol{c}_j)$</p>
+<p>となるが、これは$S(\boldsymbol{c}_i) \cap S(\boldsymbol{c}_j) = \emptyset$に反する</p>
+<p>$(\Rightarrow)$は省略</p>
+<h4 id="-3-4">例3.4</h4>
+<p>$C = \lbrace (00000), (11111) \rbrace \subseteq \boldsymbol{F}_2^5$</p>
+<p>$d_{\min} (C) = d_H ((00000),(11111)) = 5$</p>
+<p>よって定理3.1より、$C$は$\lfloor \frac{d-1}{2} \rfloor = 2$個以下の誤りが訂正可能</p>
+<p>ここで $d=5$であるので、</p>
+<p>$S(00000) = \lbrace 00000, 00001, 00010, 00100, 01000, 10000, 00011, 00101, 01001, 10001, 00110, 01010,
+ 10010, 01100, 10100, 11000 \rbrace
+$</p>
+<p>$S(11111) = \lbrace 11111, 11110, 11101, 11011, 10111, 01111, 11100, 11010, 10110, 01110, 11001, 10101,
+ 01101, 10011, 01011, 00111 \rbrace$</p>
+<h2 id="3-3-">3.3 パリティ検査行列と最小距離との関係</h2>
+<h3 id="-3-2-">[定理3.2]</h3>
+<p>体$F$上の線形符号$C$のパリティ検査行列を$H$とする</p>
+<ul>
+<li>$H$の$j$個の列ベクトルが線形従属ならば$C$はこれらの列の幾つかに対応する位置の記号が$0$でない符号語を持つ</li>
+<li>$C$が重み$j$の符号語をもつならば,$H$のある$j$この列ベクトルが線形従属</li>
+</ul>
+<h4 id="-">証明</h4>
+<p>$H = \begin{pmatrix}\boldsymbol{h}_1 &amp; \boldsymbol{h}_2 &amp; \cdots \boldsymbol{h}_n\end{pmatrix}$とする</p>
+<p>$\boldsymbol{a} =
+  \begin{pmatrix}a_1 &amp; a_2 &amp; \cdots &amp; a_j &amp; 0 &amp; \cdots &amp; 0 \end{pmatrix} \in \boldsymbol{F}^n$
+に対して</p>
+<p>$\boldsymbol{a} H^T =
+  \begin{pmatrix}
+  a_1 &amp; a_2 &amp; \cdots &amp; a_j &amp; 0 &amp; \cdots &amp; 0
+  \end{pmatrix}
+  \begin{pmatrix}
+    \boldsymbol{h}_1^T \\ \boldsymbol{h}_2^T \\ \vdots \\ \boldsymbol{h}_n^T
+  \end{pmatrix} \\
+  = a_1 \boldsymbol{h}_1^T + a_2 \boldsymbol{h}_2^T + \cdots + a_j \boldsymbol{h}_j^T
+$</p>
+<h2 id="-3-3-">[定理3.3]</h2>
+<p>$H$の任意の$(d-1)$個の列ベクトルが線形独立で、
+$H$の任意の$d$個の列ベクトルが線形従属ならば、</p>
+<p>$C$の最小距離は$d$</p>
+
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}}); </script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script></body></html>
