@@ -1,0 +1,259 @@
+<html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=yes'><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/default.min.css"><style>h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #737373;
+    background-color: white;
+    margin: 10px 13px 10px 13px;
+}
+table {
+	margin: 10px 0 15px 0;
+	border-collapse: collapse;
+}
+td,th {
+	border: 1px solid #ddd;
+	padding: 3px 10px;
+}
+th {
+	padding: 5px 10px;
+}
+
+a {
+    color: #0069d6;
+    text-decoration: none;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+    background-color: #f5f4ea;
+}
+code {
+    background-color: #f5f4ea;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #f5f4ea;
+    color:#454545;
+    font-size: 11px;
+    padding: 0;
+}
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:10px auto;
+    }
+}
+@media print {
+	body,code,pre code,h1,h2,h3,h4,h5,h6 {
+		color: black;
+	}
+	table, pre {
+		page-break-inside: avoid;
+	}
+}
+</style></head><body><h2 id="thm4-1-optimality-condition">Thm4.1 最適性条件 optimality condition</h2>
+<h3 id="-1-boldsymbol-x-ast-p-">(1) $\boldsymbol{x}^\ast$: 問題$(P)$の局所的最小解とする</h3>
+<ol>
+<li>$f:\boldsymbol{R}^n \rightarrow \boldsymbol{R}$が$\boldsymbol{x}^\ast$で微分可能$ \Rightarrow
+\nabla f(\boldsymbol{x}\ast) = \boldsymbol{0}$ (1次の必要条件)</li>
+<li>$f: \boldsymbol{R}^n \rightarrow \boldsymbol{R}$が$\boldsymbol{x}^\ast$で2回微分可能
+$\Rightarrow \nabla^2 f(\boldsymbol{x}^\ast)$が$p.s.d.$(2次の必要条件)</li>
+</ol>
+<h3 id="-2-f-boldsymbol-r-n-rightarrow-boldsymbol-r-boldsymbol-x-ast-2-">(2) $f:\boldsymbol{R}^n \rightarrow \boldsymbol{R}$が$\boldsymbol{x}^\ast$で2回微分可能</h3>
+<ul>
+<li>$\nabla f(\boldsymbol{x}^\ast)=\boldsymbol{0}$</li>
+<li>$\nabla^2 f(\boldsymbol{x}^\ast)$が$p.d.$</li>
+</ul>
+<p>$\Rightarrow \boldsymbol{x}^\ast$は$(P)$の局所的最小解(2次の十分条件)</p>
+<h4 id="-">※</h4>
+<p>$\boldsymbol{x}^\ast:$極小解 $\Rightarrow \boldsymbol{x}^\ast :$連立非線形方程式の解
+$\nabla f(\boldsymbol{x}^\ast) = \boldsymbol{0}$</p>
+<p>(1)は1変数では  $\boldsymbol{x}^\ast$で極小 $\Rightarrow f^\prime (\boldsymbol{x}^\ast) = \boldsymbol{0}$</p>
+<h4 id="prop">Prop</h4>
+<ul>
+<li>$A\in\boldsymbol{R}:\text{Sym}$</li>
+<li>$A$の固有値 $\lambda_1 \leq \cdots \leq \lambda_n$</li>
+</ul>
+<p>$\Rightarrow \lambda_1 \parallel \boldsymbol{x} \parallel^2 \leq
+\boldsymbol{x}^T A \boldsymbol{x} \leq \lambda_1 \parallel \boldsymbol{x} \parallel^2 \ 
+{}^\forall \boldsymbol{x} \in \boldsymbol{R}^n$</p>
+<h5 id="-prop-">証明(Prop)</h5>
+<p>$A$は$\text{sym.}$ $A = U
+\begin{pmatrix}
+  \lambda_1 &amp; 0 &amp; 0 \\
+  0 &amp; \ddots &amp; 0 \\
+  0 &amp;  0     &amp; \lambda_n
+\end{pmatrix}U^T$ と書ける ($U \in \boldsymbol{R}^{n\times n}$直行行列)</p>
+<p>$\boldsymbol{x}^T A \boldsymbol{x} = \boldsymbol{x}^T U \begin{pmatrix}
+  \lambda_1 &amp; 0 &amp; 0 \\
+  0 &amp; \ddots &amp; 0 \\
+  0 &amp;  0     &amp; \lambda_n
+\end{pmatrix}U^T \boldsymbol{x} \\
+= (U^T\boldsymbol{x}^T)^T \begin{pmatrix}
+  \lambda_1 &amp; 0 &amp; 0 \\
+  0 &amp; \ddots &amp; 0 \\
+  0 &amp;  0     &amp; \lambda_n
+\end{pmatrix} (U^T\boldsymbol{x}) \\
+= \boldsymbol{y}^T \begin{pmatrix}
+  \lambda_1 &amp; 0 &amp; 0 \\
+  0 &amp; \ddots &amp; 0 \\
+  0 &amp;  0     &amp; \lambda_n
+\end{pmatrix} \boldsymbol{y} \ \ (\boldsymbol{y} := U^T \boldsymbol{x}) \\
+= \sum_{i=1}^n \lambda_i y_i^2 \geq \sum_{i=1}^n \lambda_1 y_i^2 = \lambda_1 \sum y_i^2
+= \lambda_1 \parallel \boldsymbol{y} \parallel^2
+$</p>
+<p>$\boldsymbol{x}^T A \boldsymbol{x} \leq \lambda_1 \parallel \boldsymbol{x} \parallel^2$側も同様に言える</p>
+<p>$\therefore \lambda_i \leq \frac{\boldsymbol{x}^T A \boldsymbol{x}}{\parallel \boldsymbol{x} \parallel^2}
+\geq \lambda_n \ \boldsymbol{0} \neq {}^\forall \boldsymbol{x} \in \boldsymbol{R}^n$</p>
+<h5 id="-2-">証明(2)</h5>
+<p>$f(\boldsymbol{x}^\ast + \boldsymbol{d}) - f(\boldsymbol{x}^\ast
+= \nabla f(\boldsymbol{x}^\ast)^T \boldsymbol{d} +
+\frac{1}{2} \boldsymbol{d}^T \nabla^2 f(\boldsymbol{x}^\ast)\boldsymbol{d} +
+o(\parallel\boldsymbol{d}\parallel^2) \\
+= \frac{1}{2} \boldsymbol{d}^T \nabla^2 f(\boldsymbol{x}^\ast)\boldsymbol{d} +
+o(\parallel\boldsymbol{d}\parallel^2) \\
+\geq \frac{1}{2} m \parallel \boldsymbol{d} \parallel^2 -
+\frac{1}{4} m \parallel \boldsymbol{d} \parallel^2 \\
+= \frac{1}{4} m \parallel \boldsymbol{d} \parallel^2$</p>
+<p>$\frac{o(\parallel \boldsymbol{d} \parallel^2)}{\parallel \boldsymbol{d} \parallel^2} \rightarrow 0 \
+(\parallel \boldsymbol{d} \parallel \rightarrow 0)$</p>
+<p>$\mid \frac{o(\parallel \boldsymbol{d} \parallel^2)}{\parallel \boldsymbol{d} \parallel^2} \mid \leq \frac{1}{4} m$ ($\boldsymbol{d}:$十分小さいとき)</p>
+<p>$\therefore \frac{1}{4} m \parallel \boldsymbol{d} \parallel^2 \leq o(\parallel \boldsymbol{d} \parallel^2)
+(\leq \frac{1}{4} m \parallel \boldsymbol{d} \parallel^2)$</p>
+<p>よって$\boldsymbol{x}^\ast$は$f$の局所的最小解になっている</p>
+<p>($m: \nabla^2 f(\boldsymbol{x}^\ast)$の最小固有値)</p>
+<h6 id="-">※</h6>
+<p>$\epsilon &gt; 0$を$\parallel \boldsymbol{d} \parallel &lt; \epsilon$に対して
+$o(\parallel \boldsymbol{d} \parallel^2) \leq \frac{m}{4} \parallel \boldsymbol{d} \parallel^2$
+となる程度に十分小さくとる。
+この$\epsilon$に対して${}^\forall \boldsymbol{x} \in \mathcal{N}(\boldsymbol{x}^\ast ; \epsilon)$をとり
+$\boldsymbol{d} := \boldsymbol{x} - \boldsymbol{x}^\ast$とおけば</p>
+<p>$\parallel \boldsymbol{d} \parallel = \parallel \boldsymbol{x} - \boldsymbol{x}^\ast \parallel &lt; \epsilon$</p>
+<p>$\therefore f(\boldsymbol{x}^\ast + \boldsymbol{d}) - f(\boldsymbol{x}^\ast)
+\geq \frac{1}{4}m \parallel \boldsymbol{d} \parallel^2 \\
+\text{i.e.}\ f(\boldsymbol{x}) - f(\boldsymbol{x}~\ast)
+\geq \frac{1}{4} m \parallel \boldsymbol{x} - \boldsymbol{x}^\ast \parallel^2 \\
+\text{i.e.}\ f(\boldsymbol{x}) \geq f(\boldsymbol{x}^\ast) +
+\frac{1}{4} m \parallel \boldsymbol{x} - \boldsymbol{x}^\ast \parallel^2 &gt; f(\boldsymbol{x}^\ast)$</p>
+<h3 id="def-">Def. (非線形方程式系)</h3>
+<p>$\nabla f(\boldsymbol{x}^\ast) = \boldsymbol{0}$となる$\boldsymbol{x}^\ast$を$f$の停留点(stationary point)という</p>
+<h3 id="thum">Thum</h3>
+<p>$f: \boldsymbol{R}^n \rightarrow \boldsymbol{R}$が$\boldsymbol{x}^\ast$で微分可能とする</p>
+<p>$\boldsymbol{x}^\ast$が$f$の局所的最小解$\Rightarrow \nabla f(\boldsymbol{x}^\ast) = \boldsymbol{0}$
+(1次の必要条件)</p>
+<p>この逆は一般には言えない</p>
+<p>しかし、$f$が例えば,微分可能な凸関数ならば、この逆も言える。</p>
+<p>つまり$\boldsymbol{x}^\ast$が$f$の停留点 $\Rightarrow \boldsymbol{x}^\ast$は$f$の大域的最小解</p>
+<p>つまり、1次の必要条件は十分条件でもある</p>
+<h3 id="def">Def</h3>
+<p>$\boldsymbol{x}^\ast$が$f$の停留点で</p>
+<p>$\nabla^2 f(\boldsymbol{x}^\ast)$がp.s.d.
+($\boldsymbol{d}^T \nabla^2 f(\boldsymbol{x}^\ast)\boldsymbol{d} \geq 0
+\ {}^\forall \boldsymbol{d} \in \boldsymbol{R}^n$) でも
+$\nabla^2 f(\boldsymbol{x}^\ast)$がn.s.d.
+($\boldsymbol{d}^T \nabla^2 f(\boldsymbol{x}^\ast)\boldsymbol{d} \leq 0
+\ {}^\forall \boldsymbol{d} \in \boldsymbol{R}^n$) でもないとき</p>
+<p>$\text{i.e.}$</p>
+<p>${}^\exists \boldsymbol{d} \in \boldsymbol{R}^n;
+\boldsymbol{d}^T \nabla^2 f(\boldsymbol{x}^\ast) \boldsymbol{d} &lt; 0$ かつ</p>
+<p>${}^\exists \boldsymbol{d} \in \boldsymbol{R}^n;
+\boldsymbol{d}^T \nabla^2 f(\boldsymbol{x}^\ast) \boldsymbol{d} &gt; 0$ のとき</p>
+<p>$\boldsymbol{x}^\ast$を$f$の鞍点(saddle point)という</p>
+
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}}); </script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script></body></html>
