@@ -1,0 +1,209 @@
+<html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=yes'><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/default.min.css"><style>h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #737373;
+    background-color: white;
+    margin: 10px 13px 10px 13px;
+}
+table {
+	margin: 10px 0 15px 0;
+	border-collapse: collapse;
+}
+td,th {
+	border: 1px solid #ddd;
+	padding: 3px 10px;
+}
+th {
+	padding: 5px 10px;
+}
+
+a {
+    color: #0069d6;
+    text-decoration: none;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+    background-color: #f5f4ea;
+}
+code {
+    background-color: #f5f4ea;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #f5f4ea;
+    color:#454545;
+    font-size: 11px;
+    padding: 0;
+}
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:10px auto;
+    }
+}
+@media print {
+	body,code,pre code,h1,h2,h3,h4,h5,h6 {
+		color: black;
+	}
+	table, pre {
+		page-break-inside: avoid;
+	}
+}
+</style></head><body><ul>
+<li>$\boldsymbol{x}_k$ : 近似解(点)</li>
+<li>$\boldsymbol{d}_k$ : 探索方向</li>
+</ul>
+<p>が与えられている</p>
+<p>$\phi (\alpha) := f(\boldsymbol{x}_k + \alpha \boldsymbol{d}_k )$ ($\alpha$ : ステップ幅)</p>
+<p>$\phi(o) = f(\boldsymbol{x}_k) = f_k$ (略記)</p>
+<p>$\phi^\prime (\alpha) = \nabla f(\boldsymbol{x}_k + \alpha \boldsymbol{d}_k)^T \boldsymbol{d}_k$</p>
+<p>$\phi^\prime (o) = \nabla f(\boldsymbol{x}_k)^T \boldsymbol{d}_k$</p>
+<ul>
+<li>$\phi^\prime (o) = \nabla f(\boldsymbol{x}_k)^T \boldsymbol{d}_k &lt; 0$であるような方向$\boldsymbol{d}_k$を
+$f$の$\boldsymbol{x}_k$における降下方向(descent direction)という</li>
+</ul>
+<h3 id="-stopping-criterion">停止条件 stopping criterion</h3>
+<ul>
+<li>収束したとみなす(正常停止)<ul>
+<li>一次の必要条件 : $\parallel \nabla f(\boldsymbol{x}_{k+1}) \parallel &lt; \epsilon_1$</li>
+<li>点が停滞 : $\boldsymbol{x}_{k+1} \boldsymbol{x}_k \parallel &lt; \epsilon_2$ (例えば連続数回)</li>
+<li>関数値がが停滞 : $f_{k+1} f_k \parallel &lt; \epsilon_3$ (例えば連続数回)</li>
+</ul>
+</li>
+</ul>
+<p>($\epsilon_1, \epsilon_2, \epsilon_3$ : 許容誤差(tolerance))</p>
+<ul>
+<li>異常停止(強制終了)<ul>
+<li>最大反復回数 $IT_\text{max}$ を超えた場合</li>
+<li>最大関数評価回数 $FE_\text{max}$ を超えた場合</li>
+<li>最大勾配評価回数 $GE_\text{max}$ を超えた場合</li>
+</ul>
+</li>
+</ul>
+<h3 id="-lbrace-boldsymbol-x-_k-rbrace-convergence">点列 $\lbrace \boldsymbol{x}_k \rbrace$ の収束性 convergence</h3>
+<h4 id="-">大域的収束性</h4>
+<p>十分大きな領域内の任意の初期点から出発しても有限回の反復で解(の1つ)$\boldsymbol{x}^\ast$を見つけるか、
+または $\lbrace \boldsymbol{x}_k \rbrace$が$\boldsymbol{x}^\ast $(何らかの意味で)に収束する</p>
+<h4 id="-">局所的収束性</h4>
+<p>解 $\boldsymbol{x}^\ast$に十分近い任意の初期点から出発したとき有限回の反復で$\boldsymbol{x}^\ast$を見つけるか
+または$\lbrace \boldsymbol{x}_k \rbrace$が$\boldsymbol{x}^\ast$に収束する</p>
+<p>無限点列$\lbrace \boldsymbol{x}_k \rbrace$が収束する場合,その収束速度も重要</p>
+<h3 id="-1-">線形(1次)収束</h3>
+<p>$\parallel \boldsymbol{x}_{k+1} - \boldsymbol{x}^\ast \parallel
+ \leq c \parallel \boldsymbol{x}_k - \boldsymbol{x}^\ast \parallel \ (0 &lt; {}^\exists c &lt; 1)$
+ $k$ : 十分大</p>
+<h3 id="-1-">超1次収束</h3>
+<p>$\parallel \boldsymbol{x}_{k+1} - \boldsymbol{x}^\ast \parallel
+ \leq c_k \parallel \boldsymbol{x}_k - \boldsymbol{x}^\ast \parallel \ (c_k \rightarrow -1)$
+ $k$ : 十分大</p>
+<h3 id="2-">2次収束</h3>
+<p>$\parallel \boldsymbol{x}_{k+1} - \boldsymbol{x}^\ast \parallel
+ \leq c \parallel \boldsymbol{x}_k - \boldsymbol{x}^\ast \parallel^2 \ ({}^\exists c &gt; 0)$
+ $k$ : 十分大</p>
+<h3 id="-ls">正確な(厳密な)直線探索LS</h3>
+<p>$\underset{\alpha &gt; 0}{\min} \phi (\alpha) = \underset{\alpha &gt; 0}{\min} f(\boldsymbol{x}_k + \alpha \boldsymbol{d}_k )$ : 
+半直線上の最小化によるステップ幅</p>
+<p>$\alpha_k \in \underset{\alpha &gt; 0}{arg\min} \phi (\alpha) ;=
+ \lbrace \alpha^\ast \mid \min \phi(\alpha) = \phi (\alpha^\ast) \rbrace$</p>
+<p>例えば $\alpha_k = \min \lbrace \alpha \mid f(\boldsymbol{x}_k + \alpha \boldsymbol{d}_k) =
+\underset{\alpha &gt; 0}{\min} f(\boldsymbol{x}_k + \alpha \boldsymbol{d}_k) \rbrace$</p>
+
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}}); </script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script></body></html>
