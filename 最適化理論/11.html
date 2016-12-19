@@ -1,0 +1,266 @@
+<html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=yes'><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/default.min.css"><style>h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #737373;
+    background-color: white;
+    margin: 10px 13px 10px 13px;
+}
+table {
+	margin: 10px 0 15px 0;
+	border-collapse: collapse;
+}
+td,th {
+	border: 1px solid #ddd;
+	padding: 3px 10px;
+}
+th {
+	padding: 5px 10px;
+}
+
+a {
+    color: #0069d6;
+    text-decoration: none;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+    background-color: #f5f4ea;
+}
+code {
+    background-color: #f5f4ea;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #f5f4ea;
+    color:#454545;
+    font-size: 11px;
+    padding: 0;
+}
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:10px auto;
+    }
+}
+@media print {
+	body,code,pre code,h1,h2,h3,h4,h5,h6 {
+		color: black;
+	}
+	table, pre {
+		page-break-inside: avoid;
+	}
+}
+</style></head><body><h3 id="-">正確な直線探索</h3>
+<p>$\phi(\alpha) := f(\boldsymbol{x}_k + \alpha \boldsymbol{d}_k)$</p>
+<ul>
+<li><p>$ \underset{\alpha &gt; 0}{\min} \phi(\alpha) = 
+  \underset{\alpha &gt; 0}{\min} f(\boldsymbol{x}_k + \alpha \boldsymbol{d}_k) \\
+  \alpha_k \in \underset{\alpha &gt; 0} {\text{arg}\min}
+  \lbrace f(\boldsymbol{x}_k + \alpha \boldsymbol{d}_k) \rbrace \\
+  \text{e.g.} \alpha_k = \min \lbrace \alpha \mid f(\boldsymbol{x} + \alpha \boldsymbol{d}_k) = 
+  \underset{\alpha &gt; 0} {\min} f(\boldsymbol{x}_k + \alpha \boldsymbol{d}_k) \rbrace$</p>
+</li>
+<li><p>$\underset{\alpha &gt; 0}{\min} \phi(\alpha)$ となる$\alpha$の一時の必要条件</p>
+<ul>
+<li>$\phi^\prime (\alpha) = 0$ ($\alpha$の非線形方程式)</li>
+<li>i.e. $
+\phi^\prime(\alpha) = \nabla f (\boldsymbol{x} + \alpha \boldsymbol{d}_k)^T \boldsymbol{d}_k = 0 \\
+\alpha_k \in \lbrace \alpha \mid
+\nabla f (\boldsymbol{x}_k + \alpha \boldsymbol{d}_k)^T \boldsymbol{d}_k = 0 \\
+\text{e.g.} \alpha_k =
+\min \lbrace \alpha \mid \nabla f (\boldsymbol{x}_k + \alpha \boldsymbol{d}_k)^T \boldsymbol{d}_k = 0,
+\alpha &gt; 0 \rbrace$</li>
+</ul>
+</li>
+</ul>
+<p>これらの正確な直線探索は次のような欠点を持つ</p>
+<ul>
+<li>有限回の手順で$\alpha_k$を求められない(一般に無限回の手順が必要)<ul>
+<li>($\Rightarrow$ 効率的/実用的ではない)</li>
+</ul>
+</li>
+</ul>
+<h3 id="-">不正確な(非厳密な)直線探索</h3>
+<ul>
+<li>有限回の手順で終了</li>
+<li>Armijo&#39;s LS<ul>
+<li>$0 &lt; \epsilon &lt; 1$,定数 $\boldsymbol{d}_k$:$f$の降下方向
+(i.e. $ \nabla f(\boldsymbol{x}_k)^T \boldsymbol{d}_k &lt; 0 $)</li>
+<li>$f (\boldsymbol{x}_k + \alpha \boldsymbol{d}_k) \leq
+f(\boldsymbol{x}_k) + \xi \alpha \nabla f(\boldsymbol{x}_k)^T \boldsymbol{d}_k \ \cdots (\ast)$
+となる$\alpha &gt; 0$を選ぶ</li>
+<li>$\alpha \fallingdotseq 0$のとき<ul>
+<li>$f (\boldsymbol{x}_k + \alpha \boldsymbol{d}_k) \simeq
+f(\boldsymbol{x})_k + \alpha \nabla f(\boldsymbol{x}_k)^ T\boldsymbol{d}_k$
+($\alpha \nabla f(\boldsymbol{x}_k)^ T\boldsymbol{d}_k &lt; 0$)</li>
+<li>[$\phi (\alpha) \simeq \phi(0) + \phi^\prime (0) \alpha$]<ul>
+<li>($\phi^\prime (0) \alpha &lt; 0$)</li>
+<li>よって$\alpha &gt; 0, \alpha \fallingdotseq 0$のとき、$(\ast)$を満たす</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Wolfe&#39;s LS</p>
+<p>もよく使われる(省略)</p>
+<p>Armijo&#39;s LS を実現する一つの方法として、Backtracking Method</p>
+<h3 id="backtracking-method">Backtracking Method</h3>
+<h4 id="step-0">Step 0</h4>
+<ul>
+<li>Given<ul>
+<li>$\boldsymbol{x}_k$: 近似点</li>
+<li>$\boldsymbol{d}_k$: 探索方向</li>
+<li>$\xi \in (0, 1)$: Armijoパラメータ(e.g. $0.01 = 10^{-2} \sim 10^{-4}$)</li>
+<li>$\tau \in (0,1$: 縮小率 (e.g. $\tau = 0.5 = \frac{1}{2}$)</li>
+<li>$\beta_0 &gt; 0$: 初期ステップ幅(e.g. \beta_0 = 1)</li>
+</ul>
+</li>
+</ul>
+<p>$\beta := \beta_0, i := 0$とおく</p>
+<h4 id="step-1">Step 1</h4>
+<p>$f(\boldsymbol{x}_k + \beta\boldsymbol{d}_K) - f_k \leq \xi \boldsymbol{g}_k^T \boldsymbol{d}_k$
+$\Rightarrow$ Step 3へ</p>
+<p>ただし、$f_k := f(\boldsymbol{x}_k
+, \boldsymbol{g}_k := \boldsymbol{g}(\boldsymbol{x}_k) =\nabla f(\boldsymbol{x}_k)$</p>
+<h4 id="step-2-">Step 2 (バックトラック)</h4>
+<p>$\beta := \tau \beta, i := i + 1$とおき、Step 1へ戻る</p>
+<h4 id="step-3">Step 3</h4>
+<p>$\alpha_k = \beta$を採用して終了(内部反復$i$回)</p>
+<p>特に$\tau = 0.5 = \frac{1}{2}$にとれば2分法になる</p>
+<h2 id="4-5-">4.5 最急降下法</h2>
+<p>$\boldsymbol{d}_k$の決め方</p>
+<ul>
+<li>最急降下法(steepest descent method : SD法)<ul>
+<li>1次モデル $f(\boldsymbol{x}_k + \boldsymbol{d}) \simeq l_k(\boldsymbol{d}) =
+f(\boldsymbol{x}_k) + \nabla f(\boldsymbol{x}_k)^T \boldsymbol{d}$
+を局所的に最小にする方向は？</li>
+</ul>
+</li>
+</ul>
+<p>$\min \nabla f(\boldsymbol{x}_k)^T \boldsymbol{d} (\nabla f(\boldsymbol{x}) \neq \boldsymbol{0})$</p>
+<p>$\text{s.t.} \parallel \boldsymbol{d} \parallel = \parallel \nabla f(\boldsymbol{x}_k) \parallel$</p>
+<p>$\nabla f_k$と$\boldsymbol{d}$とのなす角を$\theta (0 \leq \theta \leq \pi)$とすると</p>
+<p>$\nabla f_k^T \boldsymbol{d} =
+ \parallel \nabla f_k \parallel \parallel \boldsymbol{d} \parallel \cos \theta \geq
+ \parallel \nabla f_k \parallel^2 (-1)$</p>
+<p>$\boldsymbol{d} = -\nabla f_k$ [これがSD方向]</p>
+<p>のとき$\nabla f_k^T\boldsymbol{d}$が最小</p>
+<p>$\boldsymbol{d}_k := - \nabla f_k = - g_k$は降下方向</p>
+<p>$\boldsymbol{d}_k^T \nabla f_k = - \parallel \nabla f_k \parallel^2 = - \parallel g_k \parallel^2 &lt; 0$</p>
+<h2 id="newton-">Newton 法</h2>
+<p>2次モデル
+$f(\boldsymbol{x}_k + \boldsymbol{d}) \simeq q_k(\boldsymbol{d}) ;=
+f(\boldsymbol{x}_k) + \nabla f(\boldsymbol{x}_k)^T \boldsymbol{d} +
+\frac{1}{2} \boldsymbol{d}^T \nabla^2 f(\boldsymbol{x}_k) \boldsymbol{d}$</p>
+<p>を局所的に最小化する方向は？</p>
+<p>$\underset{\boldsymbol{d} \in \boldsymbol{R}}{\min} q_k (\boldsymbol{d}$</p>
+<p>必要条件として</p>
+<p>$\nabla q_k(\boldsymbol{d}) = \boldsymbol{0} \Leftrightarrow
+\nabla f(\boldsymbol{x}_k) + \nabla^2 f(\boldsymbol{x}_k) \boldsymbol{d} = \boldsymbol{0} \Leftrightarrow
+\nabla^2 f(\boldsymbol{x}_k)\boldsymbol{d} = - \nabla f(\boldsymbol{x}_k)$ (Newton方程式)</p>
+<p>この回$\boldsymbol{d} = \boldsymbol{d}_k$とする。</p>
+<p>もし$\nabla^2 f(\boldsymbol{x}_k)$が正則ならば</p>
+<p>$\boldsymbol{d}_k = - \nabla^2 f(\boldsymbol{x}_k)^{-1}\boldsymbol{d}_k = 
+\nabla f_k^T(- \nabla^2 f_k^{-1} \nabla f_k) = - g_k^T\nabla^2f_k^{-1}\boldsymbol{g}_k &lt; 0$</p>
+<p>$\nabla^2 f_k$が$\text{p.d.}$でなくても$\boldsymbol{d}_k$が降下方向になることはある</p>
+
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}}); </script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script></body></html>
