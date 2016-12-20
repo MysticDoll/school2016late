@@ -1,0 +1,231 @@
+<html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=yes'><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/default.min.css"><style>h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #737373;
+    background-color: white;
+    margin: 10px 13px 10px 13px;
+}
+table {
+	margin: 10px 0 15px 0;
+	border-collapse: collapse;
+}
+td,th {
+	border: 1px solid #ddd;
+	padding: 3px 10px;
+}
+th {
+	padding: 5px 10px;
+}
+
+a {
+    color: #0069d6;
+    text-decoration: none;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+    background-color: #f5f4ea;
+}
+code {
+    background-color: #f5f4ea;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #f5f4ea;
+    color:#454545;
+    font-size: 11px;
+    padding: 0;
+}
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:10px auto;
+    }
+}
+@media print {
+	body,code,pre code,h1,h2,h3,h4,h5,h6 {
+		color: black;
+	}
+	table, pre {
+		page-break-inside: avoid;
+	}
+}
+</style></head><body><h3 id="-4-3-varshamov-gilbert-">[定理4.3] (Varshamov-Gilbert限界)</h3>
+<p>$
+  1 +
+  \begin{pmatrix}n - 1 \\ 1 \end{pmatrix} +
+  \begin{pmatrix}n - 1 \\ 2 \end{pmatrix} + 
+  \cdots +
+  \begin{pmatrix}n - 1 \\ d - 2 \end{pmatrix}
+  &lt; 2^{n-k}
+$</p>
+<p>が成り立つとき、次元が$k$以上で最小距離が$d$以上の符号長$n$の2元線形符号が存在する</p>
+<h4 id="-">注意</h4>
+<p>逆に符号長$n$ 次元 $k$ 最小距離 $d$の2元線形符号$C$が存在するとき, 不等式</p>
+<p>$
+  1 +
+  \begin{pmatrix}n - 1 \\ 1 \end{pmatrix} +
+  \begin{pmatrix}n - 1 \\ 2 \end{pmatrix} + 
+  \cdots +
+  \begin{pmatrix}n - 1 \\ d - 2 \end{pmatrix}
+  &lt; 2^{n-k}
+$</p>
+<p>が成り立つ</p>
+<h5 id="-">証明</h5>
+<p>各々の$\boldsymbol{x} \in \boldsymbol{F}_2^n$に対して</p>
+<p>$d_H(\boldsymbol{c}, \boldsymbol{x}) \leq d - 1$であるような</p>
+<p>$\boldsymbol{c} \in C$が存在する</p>
+<p>$\because$そのような$\boldsymbol{c} \in C$が存在しないならば、</p>
+<p>このとき、すべての$\boldsymbol{c} \in C$に対して、</p>
+<p>$d_H(\boldsymbol{c}, \boldsymbol{x}) \geq d$が成り立つことになり、$\boldsymbol{x}$を
+$C$に追加してさらに符号語数を増やすことができる。</p>
+<p>よって$\boldsymbol{F}_2^n =
+ \underset{\boldsymbol{c} \in C}{\cup} \lbrace \boldsymbol{y} \in \boldsymbol{F}_2^n \mid
+ d_H (\boldsymbol{c}, \boldsymbol{y}) \leq d - 1 \rbrace$</p>
+<p> $\mid \boldsymbol{F}_2^n \mid = \mid \underset{\boldsymbol{c} \in C}{\cup} \lbrace \boldsymbol{y} \in \boldsymbol{F}_2^n \mid
+ d_H (\boldsymbol{c}, \boldsymbol{y}) \leq d - 1 \rbrace \mid \\
+ \leq \underset{\boldsymbol{c} \in C}{\sum} \mid \lbrace \boldsymbol{y} \in \boldsymbol{F}_2^n \mid
+ d_H (\boldsymbol{c}, \boldsymbol{y}) \leq d - 1 \rbrace \mid \\ =
+ 2^k (\sum_{i = 0}^{d - 1} \begin{pmatrix} n \\ i \end{pmatrix})$ (保留)</p>
+<h3 id="-4-4-hamming-">[定理4.4] (Hamming 限界)</h3>
+<p>体$F$上の符号長$n$のブロック符号$C$が$t$個以下のすべての誤りを訂正可能ならば
+($\Leftrightarrow$ 定理3.1より、最小距離が$2t + 1$以上)</p>
+<p>$M(\sum_{j = 0}^t (q - 1)^j \begin{pmatrix} n \\ j \end{pmatrix}) \leq g^j$</p>
+<p>ただし$M = \mid C \mid, q = \mid F \mid$</p>
+<h4 id="-">注意</h4>
+<p>$F = \boldsymbol{F}_2$のとき</p>
+<p>$M\sum_{i=0}^{t} \begin{pmatrix} n \\ i \end{pmatrix} \leq 2^n$</p>
+<h4 id="-">証明</h4>
+<p>仮定より,各$\boldsymbol{c} \in C$に対して</p>
+<p>$\lbrace \boldsymbol{x} \in F^n \mid d_H (\boldsymbol{x}, \boldsymbol{c}) \leq t \rbrace$</p>
+<p>を考えたとき,それらは互いにdisjoint(共通部分が空)である</p>
+<p>よって、</p>
+<p>$F^n \supseteq \underset{\boldsymbol{c} \in C}{\cup} \rbrace \boldsymbol{x} \in F^n \mid
+ d_H (\boldsymbol{x}, \boldsymbol{c} \leq t \rbrace \\
+ \mid F^n \mid \geq \mid \underset{\boldsymbol{c} \in C}{\cup} \rbrace \boldsymbol{x} \in F^n \mid
+ d_H (\boldsymbol{x}, \boldsymbol{c} \leq t \rbrace \mid \\
+ = \sum_{\boldsymbol{c} \in C} \mid \lbrace \boldsymbol{x} \in F^n \mid
+ d_H (\boldsymbol{x}, \boldsymbol{c} \leq t \rbrace \mid \\
+ = \sum_{i = 0}^t (q - 1)^i \begin{pmatrix} n \\ i \end{pmatrix}$</p>
+<h4 id="-">注意</h4>
+<p>ハミング限界の等号を満たす符号を完全符号という</p>
+<h5 id="-">例</h5>
+<p>2元ハミング符号(定義3.2)について</p>
+<ul>
+<li>符号長 $n = 2^m - 1$</li>
+<li>次元 $k = 2^m - m - 1$</li>
+<li>最小距離 $d = 3$</li>
+</ul>
+<p>$\rightarrow
+\begin{cases}
+M = 2^k = 2^{2^m - m - 1} \\
+t = 1 
+\end{cases} $</p>
+<p>よって</p>
+<p>(左辺) $ = 2^k = 2^{2^m - m - 1}(1 + (2^m - 1) ) \\ = 2^{2^m - 1} = \text{(右辺)}$ </p>
+<p>従って完全符号である</p>
+<h3 id="-4-5-singleton-">定理4.5 (Singleton限界)</h3>
+<p>体$F$上の$(n,k)$線形符号$C$の最小距離が$d$のとき</p>
+<p>$d \leq n - k + 1$</p>
+<p>等号が成立するような符号を最大距離分離符号という</p>
+<h4 id="-">証明</h4>
+<p>符号 $C$を組織符号としても一般性を失わない</p>
+
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}}); </script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script></body></html>
